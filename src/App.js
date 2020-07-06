@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
 import NavigationBar from './components/NavigationBar'
-import TopScreen from './components/TopScreen'
-import Login from './components/Login'
-import MakeReservations from './components/MakeReservations'
-import Reservations from './components/Reservations'
+import TopScreen from './components/TopScreen/TopScreen'
+import Login from './components/Login/Login'
+import MakeReservations from './components/MakeReservations/MakeReservations'
+import Reservations from './components/Reservations/Reservations'
 import NoMatch from './components/NoMatch'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 

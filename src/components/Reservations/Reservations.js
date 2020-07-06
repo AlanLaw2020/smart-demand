@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../App.css';
+import '../../App.css';
 import {Table} from  'react-bootstrap';
 import ReservationsLayout from './ReservationsLayout'
 

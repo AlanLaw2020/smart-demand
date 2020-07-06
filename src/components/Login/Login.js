@@ -1,14 +1,14 @@
 import React, {Component} from 'react'
-import '../App.css'
+import '../../App.css'
 
-class TopScreen extends Component{
+class Login extends Component{
     render(){
         return (
           <div>
-            <h1>This is TopScreen</h1>
+            <h1>Login</h1>
           </div>
         );
       }
 }
 
-export default TopScreen;
+export default Login;
