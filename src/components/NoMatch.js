@@ -7,7 +7,7 @@ class NoMatch extends Component{
         return (
           <Container fluid>
             <Row>
-              <Col>You have come to the WRONG place!</Col>
+              <Col>You have come to the WRONGG place!</Col>
             </Row>
           </Container>
         );

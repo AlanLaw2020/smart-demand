@@ -1,14 +1,18 @@
 import React, {Component} from 'react'
-import {Container} from 'react-bootstrap'
+import {Container,Row,Col} from 'react-bootstrap'
 
-class Layout extends Component{
+
+
+class ReservationsLayout extends Component{
     render(){
         return (
           <Container>
-              {this.props.children}
+            <Row>
+              <Col>{this.props.children}</Col>
+            </Row>
           </Container>
         );
       }
 }
 
-export default Layout;
+export default ReservationsLayout;
