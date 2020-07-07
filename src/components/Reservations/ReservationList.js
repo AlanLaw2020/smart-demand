@@ -5,12 +5,19 @@ import ReservationUnit from './ReservationUnit'
 function ReservationList(){
     const reservationUnitComponents = resData.map(item => <ReservationUnit key={item.id} reservationUnit={item} />)
 
+    const tbodyStyle = {
+        fontSize: 13,
+        color: 'black'
+      }
+
     return (
-        <tbody>
+        <tbody style={tbodyStyle}>
             {reservationUnitComponents}
         </tbody>
     )
 }
+
+export default ReservationList;
 
 // class ReservationList extends Component{
 
@@ -31,5 +38,3 @@ function ReservationList(){
 //         );
 //       }
 // }
-
-export default ReservationList;

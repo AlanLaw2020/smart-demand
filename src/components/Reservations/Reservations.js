@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import '../../App.css';
-import {Table} from  'react-bootstrap';
+import {Table,Button} from  'react-bootstrap';
 import ReservationList from './ReservationList'
 import ReservationsLayout from './ReservationsLayout'
-import { render } from '@testing-library/react';
 
 function Reservations(){
 
@@ -14,7 +13,7 @@ function Reservations(){
 
   return (
     <>
-    <h1>予約確認一覧</h1>  
+    <h2>予約確認一覧</h2>  
     <ReservationsLayout>
       <Table striped bordered hover size="lg">
         <thead bgcolor="7D7D7D" style={theadStyle}>
@@ -33,6 +32,11 @@ function Reservations(){
         </thead>
         <ReservationList/>
       </Table>
+      <div className="mb-2">
+          <Button style={{ float: "right" }} size="lg">
+            予約一覧表更新
+          </Button>
+        </div>
     </ReservationsLayout>
     </>
     );

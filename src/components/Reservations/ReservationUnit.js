@@ -12,6 +12,7 @@ function ReservationUnit(props){
             <th>{props.reservationUnit.boardingPlace}</th>
             <th>{props.reservationUnit.destination}</th>
             <th>{props.reservationUnit.reservationStatus}</th>
+            <th>{props.reservationUnit.cancelable}</th>
         </tr>
     )
 }
