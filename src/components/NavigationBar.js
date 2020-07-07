@@ -48,7 +48,7 @@ class NavigationBar extends Component{
               </Nav.Item>
             </Nav>
             <Nav className="ml-auto">
-              <Nav.Item className="ml-auto">
+              <Nav.Item>
                 <Nav.Link href="/Logout">
                   <Button>ログアウト</Button>
                 </Nav.Link>
