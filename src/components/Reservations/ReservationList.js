@@ -18,14 +18,14 @@ class ReservationList extends Component {
                 isLoading: false,
                 listUnits: resData
             })
-        }, 1500)
+        }, 500)
     }
 
     render(){
         const reservationUnitComponents = this.state.listUnits.map(item => <ReservationUnit key={item.id} reservationUnit={item} />)
 
         const tbodyStyle = {
-            fontSize: 13,
+            // fontSize: 'auto',
             color: 'black'
           }
           
