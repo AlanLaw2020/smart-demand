@@ -9,7 +9,7 @@ class Reservations extends Component {
 
   render() {
     const theadStyle = {
-      fontSize: 13,
+      fontSize: auto,
       color: 'white'
     }
     const refreshButton = {
