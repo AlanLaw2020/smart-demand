@@ -4,7 +4,7 @@ import {Container,Row,Col} from 'react-bootstrap'
 class ReservationsLayout extends Component{
     render(){
         return (
-          <Container>
+          <Container fluid>
             <Row>
               <Col>{this.props.children}</Col>
             </Row>

@@ -24,39 +24,42 @@ class NavigationBar extends Component{
     render(){
       return (
         <Styles>
-        <Navbar expand="lg">
-          <Navbar.Brand href="/">
-            <img src={homeImg} alt="HOME"></img>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Item>
-                <Nav.Link href="/">
-                  <Button>トップ画面</Button>
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link href="/MakeReservations">
-                  <Button>新規予約</Button>
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link href="/Reservations">
-                  <Button>予約確認</Button>
-                </Nav.Link>
-              </Nav.Item>
-            </Nav>
-            <Nav className="ml-auto">
+          <Navbar expand="lg">
+            <Navbar.Brand href="/">
+              <img src={homeImg} alt="HOME"></img>
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="mr-auto">
+                <Nav.Item>
+                  <Nav.Link href="/">
+                    <Button>トップ画面</Button>
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="/MakeReservations">
+                    <Button>新規予約</Button>
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="/Reservations">
+                    <Button>予約確認</Button>
+                  </Nav.Link>
+                </Nav.Item>
+              </Nav>
+              <Nav className="ml-auto">
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <div>Welcome,Admin!</div>
+              </div>
               <Nav.Item>
                 <Nav.Link href="/Logout">
                   <Button>ログアウト</Button>
                 </Nav.Link>
               </Nav.Item>
             </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-      </Styles >
+            </Navbar.Collapse>
+          </Navbar>
+        </Styles >
       );
     }
 }
