@@ -15,7 +15,7 @@ return(
             </thead>
             <tbody>
                 <tr>
-                    <td>山田次郎</td>
+                    <td>山田太郎</td>
                     <td>2020/7/3 15:00</td>
                     <td>高島平駅</td>
                     <td>田端駅</td>
