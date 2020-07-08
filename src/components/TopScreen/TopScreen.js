@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button'
 
 import "./styles.css";
 import { Link } from "react-router-dom"
+import data from './table.json'
 
 export default class Topscreen extends React.Component{
   render(){
@@ -25,7 +26,7 @@ function App() {
     <div className="App">
       <div className="container">
         <h2>直近の予約状況</h2>
-        <Table />
+        <Table data={data}/>
         <div className="mb-2">
           <Button style={{ float: "left" }} size="lg">
             予約確認
