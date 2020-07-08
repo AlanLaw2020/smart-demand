@@ -22,8 +22,9 @@ class PaginationBar extends Component{
           );
         }
         
+        //without 'auto' setting, pagination will always have a ugly button margin.
         const paginationBasic = (
-            <Pagination style={{marginBottom: 'auto'}}>
+            <Pagination style = {{marginBottom: 'auto'}}>
               <Pagination.First/>
               <Pagination.Prev/>
               {items}

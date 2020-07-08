@@ -20,7 +20,7 @@ class Reservations extends Component {
       <>
       <h2>予約確認一覧</h2>  
       <ReservationsLayout>
-        <Table striped bordered hover size="lg">
+        <Table striped bordered hover size="lg" responsive>
           <thead bgcolor="7D7D7D" style={theadStyle}>
             <tr>
               <th>予約ID</th>
@@ -37,9 +37,9 @@ class Reservations extends Component {
           </thead>
           <ReservationList/>
         </Table>
-        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
+        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
           <PaginationBar/>
-          <Button>予約一覧表更新</Button>
+          <Button href = '/Reservations'>予約一覧表更新</Button>
         </div>
       </ReservationsLayout>
       </>

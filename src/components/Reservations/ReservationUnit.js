@@ -1,22 +1,62 @@
 import React, {Component} from 'react'
+import {Button} from  'react-bootstrap';
 
 class ReservationUnit extends Component {
 
+    
+
     render() {
-        return(
-            <tr>
-                <th>{this.props.reservationUnit.reservationId}</th>
-                <th>{this.props.reservationUnit.reservationTime}</th>
-                <th>{this.props.reservationUnit.passengerCount}</th>
-                <th>{this.props.reservationUnit.passengerName}</th>
-                <th>{this.props.reservationUnit.contact}</th>
-                <th>{this.props.reservationUnit.boardingTime}</th>
-                <th>{this.props.reservationUnit.boardingPlace}</th>
-                <th>{this.props.reservationUnit.destination}</th>
-                <th>{this.props.reservationUnit.reservationStatus}</th>
-                <th>{this.props.reservationUnit.cancelable}</th>
-            </tr>
-        )
+                
+        if(this.props.reservationUnit.reservationStatus === '予約OK'){
+            return(
+                <tr style={{marginBottom:'auto',alignItems: 'center'}}>
+                    <td>{this.props.reservationUnit.reservationId}</td>
+                    <td>{this.props.reservationUnit.reservationTime}</td>
+                    <td>{this.props.reservationUnit.passengerCount}</td>
+                    <td>{this.props.reservationUnit.passengerName}</td>
+                    <td>{this.props.reservationUnit.contact}</td>
+                    <td>{this.props.reservationUnit.boardingTime}</td>
+                    <td>{this.props.reservationUnit.boardingPlace}</td>
+                    <td>{this.props.reservationUnit.destination}</td>
+                    <td>{this.props.reservationUnit.reservationStatus}</td>
+                    <td>
+                        <Button variant="link" size='sm'>キャンセル</Button>
+                    </td>
+                </tr>
+            )
+        }else if(this.props.reservationUnit.reservationStatus === '予約確認中'){
+            return(
+                <tr>
+                    <td>{this.props.reservationUnit.reservationId}</td>
+                    <td>{this.props.reservationUnit.reservationTime}</td>
+                    <td>{this.props.reservationUnit.passengerCount}</td>
+                    <td>{this.props.reservationUnit.passengerName}</td>
+                    <td>{this.props.reservationUnit.contact}</td>
+                    <td>{this.props.reservationUnit.boardingTime}</td>
+                    <td>{this.props.reservationUnit.boardingPlace}</td>
+                    <td>{this.props.reservationUnit.destination}</td>
+                    <td>{this.props.reservationUnit.reservationStatus}</td>
+                    <td>
+                        <Button variant="link" size='sm'>キャンセル</Button>
+                    </td>
+                </tr>
+            )
+        }else{
+            return(
+                <tr>
+                    <td>{this.props.reservationUnit.reservationId}</td>
+                    <td>{this.props.reservationUnit.reservationTime}</td>
+                    <td>{this.props.reservationUnit.passengerCount}</td>
+                    <td>{this.props.reservationUnit.passengerName}</td>
+                    <td>{this.props.reservationUnit.contact}</td>
+                    <td>{this.props.reservationUnit.boardingTime}</td>
+                    <td>{this.props.reservationUnit.boardingPlace}</td>
+                    <td>{this.props.reservationUnit.destination}</td>
+                    <td>{this.props.reservationUnit.reservationStatus}</td>
+                    <td>{''}</td>
+                </tr>
+            )
+        }
     }
 }
 

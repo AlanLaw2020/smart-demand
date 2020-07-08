@@ -6,17 +6,37 @@ class ReservationList extends Component {
 
     constructor() {
         super ()
-        this.state = []
+        this.state = {
+            isLoading: true,
+            listUnits: []
+        }
+    }
+
+    componentDidMount(){
+        setTimeout(() => {
+            this.setState({
+                isLoading: false,
+                listUnits: resData
+            })
+        }, 1500)
     }
 
     render(){
-        const reservationUnitComponents = resData.map(item => <ReservationUnit key={item.id} reservationUnit={item} />)
+        const reservationUnitComponents = this.state.listUnits.map(item => <ReservationUnit key={item.id} reservationUnit={item} />)
 
         const tbodyStyle = {
             fontSize: 13,
             color: 'black'
           }
-    
+          
+        if(this.state.isLoading === true){
+            return(
+                    <tr>
+                        <td colSpan='10'>Loading...</td>
+                    </tr>
+            )
+        }
+
         return (
             <tbody style={tbodyStyle}>
                 {reservationUnitComponents}
@@ -26,23 +46,3 @@ class ReservationList extends Component {
 }
 
 export default ReservationList;
-
-// class ReservationList extends Component{
-
-//     render(){
-//         return (
-//             <tr>
-//                 <th>{this.props.reservationID}</th>
-//                 <th>2020/06/08/ 8:00</th>
-//                 <th>1</th>
-//                 <th>山田次郎</th>
-//                 <th>080-1234-5678</th>
-//                 <th>7/4/2020  3:00:00 PM</th>
-//                 <th>高島平</th>
-//                 <th>田端</th>
-//                 <th>予約OK</th>
-//                 <th>キャンセル</th>
-//             </tr>
-//         );
-//       }
-// }
