@@ -1,8 +1,8 @@
 ﻿import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
-import './App.css';
-
+import '../../App.css';
+import MakeReservation_button_2 from "./MakeReservation_button_2";
 
 
 
@@ -34,7 +34,7 @@ function MakeReservation_button() {
                 <Modal.Body>you''ll make a reservation?</Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>NO!</Button>
-                    <Button variant="primary">OK!</Button>
+                    <Button variant="primary" onClick={handleShow}><MakeReservation_button_2 /></Button>
                 </Modal.Footer>
             </Modal>
         </>
