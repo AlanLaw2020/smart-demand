@@ -48,6 +48,9 @@ class NavigationBar extends Component{
               </Nav.Item>
             </Nav>
             <Nav className="ml-auto">
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <div>Welcome,Admin!</div>
+              </div>
               <Nav.Item>
                 <Nav.Link href="/Logout">
                   <Button>ログアウト</Button>
