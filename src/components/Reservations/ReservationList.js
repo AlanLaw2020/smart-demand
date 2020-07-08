@@ -2,19 +2,27 @@ import React, {Component} from 'react'
 import resData from "./resData"
 import ReservationUnit from './ReservationUnit'
 
-function ReservationList(){
-    const reservationUnitComponents = resData.map(item => <ReservationUnit key={item.id} reservationUnit={item} />)
+class ReservationList extends Component {
 
-    const tbodyStyle = {
-        fontSize: 13,
-        color: 'black'
-      }
+    constructor() {
+        super ()
+        this.state = []
+    }
 
-    return (
-        <tbody style={tbodyStyle}>
-            {reservationUnitComponents}
-        </tbody>
-    )
+    render(){
+        const reservationUnitComponents = resData.map(item => <ReservationUnit key={item.id} reservationUnit={item} />)
+
+        const tbodyStyle = {
+            fontSize: 13,
+            color: 'black'
+          }
+    
+        return (
+            <tbody style={tbodyStyle}>
+                {reservationUnitComponents}
+            </tbody>
+        )
+    }
 }
 
 export default ReservationList;

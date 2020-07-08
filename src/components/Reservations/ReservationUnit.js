@@ -1,20 +1,23 @@
 import React, {Component} from 'react'
 
-function ReservationUnit(props){
-    return(
-        <tr>
-            <th>{props.reservationUnit.reservationId}</th>
-            <th>{props.reservationUnit.reservationTime}</th>
-            <th>{props.reservationUnit.passengerCount}</th>
-            <th>{props.reservationUnit.passengerName}</th>
-            <th>{props.reservationUnit.contact}</th>
-            <th>{props.reservationUnit.boardingTime}</th>
-            <th>{props.reservationUnit.boardingPlace}</th>
-            <th>{props.reservationUnit.destination}</th>
-            <th>{props.reservationUnit.reservationStatus}</th>
-            <th>{props.reservationUnit.cancelable}</th>
-        </tr>
-    )
+class ReservationUnit extends Component {
+
+    render() {
+        return(
+            <tr>
+                <th>{this.props.reservationUnit.reservationId}</th>
+                <th>{this.props.reservationUnit.reservationTime}</th>
+                <th>{this.props.reservationUnit.passengerCount}</th>
+                <th>{this.props.reservationUnit.passengerName}</th>
+                <th>{this.props.reservationUnit.contact}</th>
+                <th>{this.props.reservationUnit.boardingTime}</th>
+                <th>{this.props.reservationUnit.boardingPlace}</th>
+                <th>{this.props.reservationUnit.destination}</th>
+                <th>{this.props.reservationUnit.reservationStatus}</th>
+                <th>{this.props.reservationUnit.cancelable}</th>
+            </tr>
+        )
+    }
 }
 
 export default ReservationUnit;
