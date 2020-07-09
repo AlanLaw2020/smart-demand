@@ -1,6 +1,6 @@
 ﻿import React from "react"
 /* global google */
-/* eslint-disable no-undef */
+
 
 const _ = require("lodash");
 const { compose, withProps, lifecycle } = require("recompose");
@@ -16,8 +16,8 @@ const MapWithASearchBox = compose(
     withProps({
         googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC7fei0dvf-f0SLltSVkWeo-rM0wr57bjk&v=3.exp&libraries=geometry,drawing,places",
         loadingElement: <div style={{ height: `100%` }} />,
-        containerElement: <div style={{ height: `400px` }} />,
-        mapElement: <div style={{ height: `100%` }} />,
+        containerElement: <div style={{ height: `500px` }} />,
+        mapElement: <div style={{ height: `115%` }} />,
     }),
     lifecycle({
         componentWillMount() {
@@ -26,7 +26,7 @@ const MapWithASearchBox = compose(
             this.setState({
                 bounds: null,
                 center: {
-                    lat: 41.9, lng: -87.624
+                    lat: 35.681236, lng: 139.767125
                 },
                 markers: [],
                 onMapMounted: ref => {
@@ -71,9 +71,10 @@ const MapWithASearchBox = compose(
 )(props =>
     <GoogleMap
         ref={props.onMapMounted}
-        defaultZoom={15}
+        defaultZoom={14}
         center={props.center}
         onBoundsChanged={props.onBoundsChanged}
+        draggable={true}
     >
         <SearchBox
             ref={props.onSearchBoxMounted}
@@ -83,7 +84,7 @@ const MapWithASearchBox = compose(
         >
             <input
                 type="text"
-                placeholder="Customized your placeholder"
+                placeholder="地名もしくは建物名を入力"
                 style={{
                     boxSizing: `border-box`,
                     border: `1px solid transparent`,
@@ -99,6 +100,8 @@ const MapWithASearchBox = compose(
                 }}
             />
         </SearchBox>
+
+
         {props.markers.map((marker, index) =>
             <Marker key={index} position={marker.position} />
         )}
