@@ -1,50 +1,78 @@
-import React, {Component} from 'react';
-import '../../App.css';
-import {Table,Button} from  'react-bootstrap';
-import ReservationList from './ReservationList'
+import React, {useState, useEffect} from 'react'
+import '../../App.css'
 import ReservationsLayout from './ReservationsLayout'
 import PaginationBar from './PaginationBar'
+import ReservationTable from './ReservationTable'
+import resData from './resData'
 
-class Reservations extends Component {
-
-  render() {
-    const theadStyle = {
-      // fontSize: 'auto',
-      color: 'white'
-    }
-    const refreshButton = {
-      // float: "left"
-    }
+function Reservations(){
+  const [posts, setPosts] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postsPerPage] = useState(3)  //Number of posts per page.
   
-    return (
-      <>
-      <h2>予約確認一覧</h2>  
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true)
+      const res = resData
+      setPosts(res)
+      setLoading(false)
+    }
+
+    fetchPosts();
+  }, [])
+
+  // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+
+  return (
+    <>
+      <h2>予約確認一覧</h2>
       <ReservationsLayout>
-        <Table striped bordered hover size="lg" responsive>
-          <thead bgcolor="7D7D7D" style={theadStyle}>
-            <tr>
-              <th>予約ID</th>
-              <th>予約日時</th>
-              <th>人数</th>
-              <th>乗車者</th>
-              <th>コンタクト</th>
-              <th>乗車日時</th>
-              <th>乗車地点</th>
-              <th>降車地点</th>
-              <th>ステータス</th>
-              <th>キャンセル</th>
-            </tr>
-          </thead>
-          <ReservationList/>
-        </Table>
-        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
-          <PaginationBar/>
-          <Button href = '/Reservations'>予約一覧表更新</Button>
+        <ReservationTable currentPosts={currentPosts} loading={loading} />
+        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+          <PaginationBar
+            postsPerPage={postsPerPage}
+            totalPosts={posts.length}
+            paginate={paginate}
+          />
         </div>
       </ReservationsLayout>
-      </>
-      )
-  }
+    </>
+    )
 }
 
 export default Reservations
+
+
+// class Reservations extends Component {
+
+//   render() {
+//     const theadStyle = {
+//       // fontSize: 'auto',
+//       color: 'white'
+//     }
+  
+//     return (
+//       <>
+//         <h2>予約確認一覧</h2>
+//         <ReservationsLayout>
+//           <ReservationTable  posts={currentPosts} loading={loading} />
+//           <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+//             <PaginationBar
+//               postsPerPage={postsPerPage}
+//               totalPosts={posts.length}
+//               paginate={paginate}
+//             />
+//           </div>
+//         </ReservationsLayout>
+//       </>
+//       )
+//   }
+// }
+
