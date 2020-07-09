@@ -9,7 +9,7 @@ function Reservations(){
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
-  const [postsPerPage] = useState(3)  //Number of posts per page.
+  const [postsPerPage] = useState(7)  //Number of posts per page.
   
   useEffect(() => {
     const fetchPosts = async () => {
