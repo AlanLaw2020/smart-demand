@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button'
 import "./styles.css";
 import { Link } from "react-router-dom"
 import data from './table.json'
+import Data from './newInfo.json'
 
 export default class Topscreen extends React.Component{
   render(){
@@ -49,9 +50,17 @@ function Infomation() {
     <div className="container">
     <h2>最新のお知らせ</h2>
       <div id="largeArea">
-        <p class="text-left">
-          ・新型コロナウイルスに関する対策と対応方法について
-        </p>
+        <div className="posts">
+          { Data.map(post =>{
+            return(
+              <div>
+                <p class="text-left">
+                  { post.news }
+                </p>
+              </div>
+            )
+          }) }
+        </div>
       </div>
     </div>
     );
