@@ -1,42 +1,25 @@
-import React, {Component} from 'react'
-import {Pagination} from 'react-bootstrap'
+import React from 'react';
 
-class PaginationBar extends Component{
+const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
+  const pageNumbers = [];
 
-    constructor(props) {
-        super()
-        this.state = {
+  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+    pageNumbers.push(i);
+  }
 
-        }
-    }
-
-    render(){
-
-        let active = 1;
-        let items = [];
-        for (let number = 1; number <= 5; number++) {
-          items.push(
-            <Pagination.Item key={number} active={number === active}>
+  return (
+    <nav>
+      <ul className='pagination'>
+        {pageNumbers.map(number => (
+          <li key={number} className='page-item'>
+            <span onClick={() => paginate(number)} className='page-link'>
               {number}
-            </Pagination.Item>,
-          );
-        }
-        
-        //without 'auto' setting, pagination will always have a ugly button margin.
-        const paginationBasic = (
-            <Pagination style = {{marginBottom: 'auto'}}>
-              <Pagination.First/>
-              <Pagination.Prev/>
-              {items}
-              <Pagination.Next/>
-              <Pagination.Last/>
-            </Pagination>
-        );
+            </span>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
 
-        return (
-            paginationBasic
-        );
-      }
-}
-
-export default PaginationBar;
+export default Pagination;
