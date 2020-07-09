@@ -16,16 +16,16 @@ function MakeReservation_button_2() {
 
     return (
         <>
-            <Button onClick={() => setSmShow(true)}>OK</Button>{' '}
+            <Button onClick={() => setSmShow(true)}>はい</Button>{' '}
             <Modal
                 size="sm"
                 show={smShow}
                 onHide={() => setSmShow(false)}
                 aria-labelledby="example-modal-sizes-title-sm">
                 <Modal.Header closeButton>
-                    <Modal.Title id="example-modal-sizes-title-sm">予約したよ</Modal.Title>
+                    <Modal.Title id="example-modal-sizes-title-sm">予約情報送信しました。</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>reserved!</Modal.Body>
+                
             </Modal>
         </>
     );

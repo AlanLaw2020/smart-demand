@@ -21,7 +21,7 @@ function MakeReservation_button() {
     return (
 
         <>
-            <Button variant="primary" onClick={handleShow}>I make a reservation</Button>
+            <Button variant="primary" onClick={handleShow} size="lg">予約</Button>
 
             <Modal
                 show={show}
@@ -29,11 +29,11 @@ function MakeReservation_button() {
                 backdrop="static"
                 keyboard={false}>
                 <Modal.Header closeButton>
-                    <Modal.Title>ほんとに予約するの?</Modal.Title>
+                    <Modal.Title>予約を送信致しますか？</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>you''ll make a reservation?</Modal.Body>
+
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>NO!</Button>
+                    <Button variant="secondary" onClick={handleClose} size="lg">いいえ</Button>
                     <Button variant="primary" onClick={handleShow}><MakeReservation_button_2 /></Button>
                 </Modal.Footer>
             </Modal>
