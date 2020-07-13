@@ -14,7 +14,7 @@ function SheetAreaContainer(){
   const [loading, setLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(POSTSPERPAGE)
-  
+
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true)
@@ -42,6 +42,7 @@ function SheetAreaContainer(){
           <PaginationBar
             postsPerPage={postsPerPage}
             totalPosts={posts.length}
+            activePage={currentPage}
             paginate={paginate}
           />
         </div>
