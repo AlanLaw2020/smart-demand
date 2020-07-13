@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Container,Row,Col} from 'react-bootstrap'
 
-class ReservationsLayout extends Component{
+class SheetAreaLayout extends Component{
     render(){
         return (
           <Container fluid>
@@ -13,4 +13,4 @@ class ReservationsLayout extends Component{
       }
 }
 
-export default ReservationsLayout;
+export default SheetAreaLayout;

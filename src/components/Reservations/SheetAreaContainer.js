@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import ReservationsLayout from './ReservationsLayout'
+import SheetAreaLayout from './SheetAreaLayout'
 import PaginationBar from './PaginationBar'
 import ReservationTable from './ReservationTable'
 import resData from './resData'
@@ -36,7 +36,7 @@ function SheetAreaContainer(){
 
   return (
     <>
-      <ReservationsLayout>
+      <SheetAreaLayout>
         <ReservationTable currentPosts={currentPosts} loading={loading} />
         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
           <PaginationBar
@@ -45,7 +45,7 @@ function SheetAreaContainer(){
             paginate={paginate}
           />
         </div>
-      </ReservationsLayout>
+      </SheetAreaLayout>
     </>
     )
 }
