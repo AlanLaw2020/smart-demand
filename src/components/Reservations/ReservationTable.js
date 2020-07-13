@@ -3,7 +3,7 @@ import '../../App.css';
 import {Table} from  'react-bootstrap';
 import ReservationList from './ReservationList'
 
-class Reservations extends Component {
+class ReservationTable extends Component {
 
   render() {
     const theadStyle = {
@@ -34,4 +34,4 @@ class Reservations extends Component {
   }
 }
 
-export default Reservations
+export default ReservationTable
