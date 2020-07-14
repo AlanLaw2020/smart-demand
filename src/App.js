@@ -20,6 +20,7 @@ class App extends Component {
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/makereservations" component={MakeReservations} />
                 <Route exact path="/reservations" component={Reservations} />
+                {/* <Route exact path="/reservationDetail" component={ReservationDetail} /> */}
                 <Route component={NoMatch} />
               </Switch>
               {/* <Footer /> */}

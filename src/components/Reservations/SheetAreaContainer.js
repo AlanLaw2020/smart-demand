@@ -2,12 +2,13 @@ import React, {useState, useEffect} from 'react'
 import SheetAreaLayout from './SheetAreaLayout'
 import PaginationBar from './PaginationBar'
 import ReservationTable from './ReservationTable'
-import resData from './resData'
+import resDataMega from './resDataMega'
+import resDataMap from './resDataMap'
 
 //SheetAreaContainer contains the ReservationTable and Pagination
 function SheetAreaContainer(){
 
-  const POSTSPERPAGE = 7  //Number of posts per page.
+  const POSTSPERPAGE = 8  //Number of posts per page.
 
   //All four states below will be used in both ReservationTable and Pagination after logics and modification.
   const [posts, setPosts] = useState([])
@@ -18,7 +19,8 @@ function SheetAreaContainer(){
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true)
-      const res = resData
+      // const res = resDataMega
+      const res = resDataMap
       setPosts(res)
       setLoading(false)
     }

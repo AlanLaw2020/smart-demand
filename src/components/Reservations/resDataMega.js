@@ -1,4 +1,4 @@
-const resData=[
+const resDataMega=[
     {
         id:1,
         reservationId:"YT050808002",
@@ -481,4 +481,4 @@ const resData=[
     }
 ]
 
-export default resData
+export default resDataMega
