@@ -3,16 +3,6 @@ import '../../App.css';
 import {Table} from  'react-bootstrap';
 import ReservationList from './ReservationList'
 
-const expandRow = {
-  renderer: row => (
-    <div>
-      <p>{ `This Expand row is belong to rowKey ${row.id}` }</p>
-      <p>You can render anything here, also you can add additional data on every row object</p>
-      <p>expandRow.renderer callback will pass the origin row object to you</p>
-    </div>
-  )
-};
-
 class ReservationTable extends Component {
 
   render() {
@@ -22,7 +12,7 @@ class ReservationTable extends Component {
   
     return (
       <>
-        <Table expandRow={expandRow} striped bordered hover size="lg" responsive>
+        <Table striped bordered hover size="lg" responsive>
           <thead bgcolor="7D7D7D" style={theadStyle}>
             <tr>
               <th>予約ID</th>
