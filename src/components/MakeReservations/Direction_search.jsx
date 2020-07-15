@@ -1,33 +1,53 @@
-﻿import React from "react"
-/* global google */
-
-
+import React from "react"
+/*global google*/
+import { Row, Col, Container } from 'react-bootstrap';
 const _ = require("lodash");
 const { compose, withProps, lifecycle } = require("recompose");
 const {
     withScriptjs,
     withGoogleMap,
     GoogleMap,
+    DirectionsRenderer,
     Marker,
 } = require("react-google-maps");
 const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");
 const { StandaloneSearchBox } = require("react-google-maps/lib/components/places/StandaloneSearchBox");
 
-const MapWithASearchBox = compose(
+
+const MapWithADirectionsRenderer_2 = compose(
     withProps({
         googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC7fei0dvf-f0SLltSVkWeo-rM0wr57bjk&v=3.exp&libraries=geometry,drawing,places",
         loadingElement: <div style={{ height: `100%` }} />,
-        containerElement: <div style={{ height: `500px` }} />,
-        mapElement: <div style={{ height: `125%` }} />,
+        containerElement: <div style={{ height: `400px` }} />,
+        mapElement: <div style={{ height: `170%`, width: `105%` }} />,
     }),
+    withScriptjs,
+    withGoogleMap,
     lifecycle({
         componentWillMount() {
+
+            const DirectionsService = new google.maps.DirectionsService();
+
+            DirectionsService.route({
+                origin: new google.maps.LatLng(35.690921, 139.700258),
+                destination: new google.maps.LatLng(35.7038, 139.7345),
+                travelMode: google.maps.TravelMode.DRIVING,
+            }, (result, status) => {
+                if (status === google.maps.DirectionsStatus.OK) {
+                    this.setState({
+                        directions: result,
+                    });
+                } else {
+                    console.error(`error fetching directions ${result}`);
+                }
+            });
+
             const refs = {}
 
             this.setState({
                 bounds: null,
                 center: {
-                    lat: 35.681236, lng: 139.767125
+                    lat: 35.690921, lng: 139.700258
                 },
                 markers: [],
                 onMapMounted: ref => {
@@ -53,6 +73,7 @@ const MapWithASearchBox = compose(
                             bounds.extend(place.geometry.location)
                         }
                     });
+
                     const nextMarkers = places.map(place => ({
                         position: place.geometry.location,
                     }));
@@ -62,52 +83,50 @@ const MapWithASearchBox = compose(
                         center: nextCenter,
                         markers: nextMarkers,
                     });
-                    //refs.map.fitBounds(bounds);
+                    // refs.map.fitBounds(bounds);
+
+
+
+
+
+
                 },
             })
-        },
+        }
     }),
-    withScriptjs,
-    withGoogleMap
 )(props =>
-    <GoogleMap
-        ref={props.onMapMounted}
-        defaultZoom={14}
-        center={props.center}
-        onBoundsChanged={props.onBoundsChanged}
-        draggable={true}
-    >
-        
+    <div>
+        <div data-standalone-searchbox="">
 
-        <StandaloneSearchBox
-            ref={props.onSearchBoxMounted}
-            bounds={props.bounds}
-            onPlacesChanged={props.onPlacesChanged}
+        </div>
+
+        <GoogleMap
+            ref={props.onMapMounted}
+            defaultZoom={7}
+            center={props.center}
+            defaultCenter={new google.maps.LatLng(41.8507300, -87.6512600)}
         >
-            <input
-                type="text"
-                placeholder="地名もしくは建物名を入力"
-                style={{
-                    boxSizing: `border-box`,
-                    border: `1px solid transparent`,
-                    width: `260px`,
-                    height: `32px`,
-                    padding: `0 40px`,
-                    borderRadius: `3px`,
-                    boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
-                    fontSize: `14px`,
-                    outline: `none`,
-                    textOverflow: `ellipses`,
-                    float: "left",
-                }}
-            />
-        </StandaloneSearchBox>
-        
-        
-        {props.markers.map((marker, index) =>
-            <Marker key={index} position={marker.position} />
-        )}
-    </GoogleMap>
+            <StandaloneSearchBox
+                ref={props.onSearchBoxMounted}
+                bounds={props.bounds}
+                onPlacesChanged={props.onPlacesChanged}
+            >
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Customized your placeholder"
+
+                />
+            </StandaloneSearchBox>
+
+
+            {props.directions && <DirectionsRenderer directions={props.directions} />}
+            {props.markers.map((marker, index) =>
+                <Marker key={index} position={marker.position} />
+            )
+            }
+        </GoogleMap>
+    </div>
 );
 
-export default MapWithASearchBox;
+export default MapWithADirectionsRenderer_2;
