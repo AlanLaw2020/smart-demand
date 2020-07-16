@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import SheetAreaContainer from './SheetAreaContainer'
+import SheetAreaContainer from './Depricated/SheetAreaContainer'
 import TableNextContainer from './TableNextContainer'
 
 function Reservations(){

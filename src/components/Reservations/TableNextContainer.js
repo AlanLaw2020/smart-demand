@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import BootstrapTable from 'react-bootstrap-table-next'
 import resDataMap from './resDataMap'
-import SheetAreaLayout from './SheetAreaLayout'
+import SheetAreaLayout from './Depricated/SheetAreaLayout'
 import paginationFactory from 'react-bootstrap-table2-paginator'
 import {Button} from  'react-bootstrap';
 import './tableNext.css'
+import ReservationDetail from './ReservationDetail'
 // import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css'
 
 function TableNextContainer(){
@@ -79,11 +80,14 @@ function TableNextContainer(){
 
     const expandRow = {
         renderer: row => (
-            <div>
-                <p>{ `This Expand row is belong to rowKey ${row.id}` }</p>
-                <p>You can render anything here, also you can add additional data on every row object</p>
-                <p>expandRow.renderer callback will pass the origin row object to you</p>
-            </div>
+            <>
+                <ReservationDetail/>
+                <div>
+                    <p>{ `This Expand row is belong to rowKey ${row.id}` }</p>
+                    <p>You can render anything here, also you can add additional data on every row object</p>
+                    <p>expandRow.renderer callback will pass the origin row object to you</p>
+                </div>
+            </>
         )
     };
 

@@ -94,7 +94,104 @@ const resDataMap=[
         boardingPlace:"高島平",
         destination:"蔵前",
         reservationStatus:"未乗車"
+    },
+    {
+        id:9,
+        reservationId:"YT050808010",
+        reservationTime:"06/07/2020 8:00",
+        passengerCount:"1",
+        passengerName:"山田次郎",
+        contact:"080-1234-5678",
+        boardingTime:"07/04/2020  13:00",
+        boardingPlace:"高島平",
+        destination:"田端",
+        reservationStatus:"予約OK"
+    },
+    {
+        id:10,
+        reservationId:"YT050808011",
+        reservationTime:"06/08/2020 8:00",
+        passengerCount:"1",
+        passengerName:"山田次郎",
+        contact:"080-1234-5678",
+        boardingTime:"07/04/2020  13:00",
+        boardingPlace:"高島平",
+        destination:"赤羽",
+        reservationStatus:"予約NG"
+    },    
+    {
+        id:11,
+        reservationId:"YT050808012",
+        reservationTime:"06/10/2020 8:00",
+        passengerCount:"2",
+        passengerName:"山田次郎、山田三郎",
+        contact:"080-1234-5678",
+        boardingTime:"07/04/2020  13:00",
+        boardingPlace:"北赤羽",
+        destination:"池袋",
+        reservationStatus:"予約NG"
+    },
+    {
+        id:12,
+        reservationId:"YT050808013",
+        reservationTime:"06/11/2020 8:00",
+        passengerCount:"3",
+        passengerName:"山田太郎、山田次郎、山田三郎",
+        contact:"080-1234-5678",
+        boardingTime:"07/04/2020  13:00",
+        boardingPlace:"中村橋",
+        destination:"池袋",
+        reservationStatus:"予約確認中"
+    },
+    {
+        id:13,
+        reservationId:"YT050808014",
+        reservationTime:"06/11/2020 8:00",
+        passengerCount:"3",
+        passengerName:"山田太郎、山田次郎、山本太郎",
+        contact:"080-1234-5678",
+        boardingTime:"07/04/2020  13:00",
+        boardingPlace:"池袋",
+        destination:"田端",
+        reservationStatus:"予約確認中"
+    },
+    {
+        id:14,
+        reservationId:"YT050808015",
+        reservationTime:"06/11/2020 8:00",
+        passengerCount:"1",
+        passengerName:"山田次郎",
+        contact:"080-1234-5678",
+        boardingTime:"07/04/2020  13:00",
+        boardingPlace:"王子",
+        destination:"田端",
+        reservationStatus:"予約取消"
+    },
+    {
+        id:15,
+        reservationId:"YT050808016",
+        reservationTime:"06/11/2020 8:00",
+        passengerCount:"1",
+        passengerName:"山田次郎",
+        contact:"080-1234-5678",
+        boardingTime:"07/04/2020  13:00",
+        boardingPlace:"高島平",
+        destination:"王子",
+        reservationStatus:"乗車完了"
+    },
+    {
+        id:16,
+        reservationId:"YT050808017",
+        reservationTime:"06/11/2020 8:00",
+        passengerCount:"1",
+        passengerName:"山田次郎",
+        contact:"080-1234-5678",
+        boardingTime:"07/04/2020  13:00",
+        boardingPlace:"高島平",
+        destination:"蔵前",
+        reservationStatus:"未乗車"
     }
+    
 ]
 
 export default resDataMap
