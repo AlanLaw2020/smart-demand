@@ -9,7 +9,7 @@ import MapWithADirectionsRenderer from './Direction';
 import "bootstrap/dist/css/bootstrap.min.css";
 import MapWithADirectionsRenderer_2 from './Direction_search';
 import props from "./MapWithASearchBox";
-
+import ReactDOM from 'react-dom';
 
 
 const { compose, withProps, lifecycle } = require("recompose");
@@ -55,18 +55,18 @@ const PlacesWithStandaloneSearchBox = compose(
                 type="text"
                 class="form-control"
                 placeholder="住所もしくは建物名を入力してください"
-                
+
             />
         </StandaloneSearchBox>
-        <ol>
-            {props.places.map(({ place_id, formatted_address, geometry: { location } }) =>
-                <li key={place_id}>
-                    {formatted_address}
-                    {" at "}
-          ({location.lat()}, {location.lng()})
-        </li>
-            )}
-        </ol>
+
+        {props.places.map(({ formatted_address, geometry: { location } }) =>
+            <li >
+                {formatted_address}
+
+
+            </li>
+        )}
+
     </div>
 );
 

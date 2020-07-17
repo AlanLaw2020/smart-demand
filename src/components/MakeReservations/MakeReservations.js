@@ -10,8 +10,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MapWithADirectionsRenderer_2 from './Direction_search';
 import props from "./MapWithASearchBox";
 import PlacesWithStandaloneSearchBox from './PlacesWithStandaloneSearchBox';
-
-
+const { StandaloneSearchBox } = require("react-google-maps/lib/components/places/StandaloneSearchBox");
+/*global google*/
 
 
 
@@ -36,6 +36,11 @@ class MakeReservations extends Component {
                                             <input type="datetime-local" class="form-control" id="nichiji" placeholder="日時" />
                                             <br></br>
 
+                                            <label for="name"><h5>乗車者</h5></label>
+                                            <input type="name" class="form-control" id="name" placeholder="お客様名" />
+
+                                            <br></br>
+
                                             <label for="ninzu" class="col-sm-5 col-form-label"><h5>乗車人数</h5></label>
                                             <select class="form-control" id="ninzu">
                                                 <option>1</option>
@@ -44,7 +49,8 @@ class MakeReservations extends Component {
                                                 <option>4</option>
                                                 <option>5</option></select>
                                             <br></br>
-
+                                            <Col xs={7}></Col>
+                                            <Col xs={7}></Col>
                                             <label for="josha" class="col-sm-5 col-form-label"><h5>乗車地点</h5></label>
                                             {/*<input type="josha" class="form-control" id="josha" placeholder="乗車地点" />*/}
                                             <PlacesWithStandaloneSearchBox />
@@ -61,12 +67,17 @@ class MakeReservations extends Component {
                                             <textarea class="form-control" id="bikou" rows="2"></textarea>
                                             <br></br>
 
+
                                             <MakeReservation_button />
+                                            <br></br>
+
+
                                         </Card.Text></Col>
 
 
                                     <Col xs={5}>
                                         <MapWithADirectionsRenderer_2 />
+
                                     </Col>
                                 </Row>
                             </Container>

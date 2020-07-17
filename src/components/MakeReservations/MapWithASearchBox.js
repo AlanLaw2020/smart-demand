@@ -21,13 +21,25 @@ const MapWithASearchBox = compose(
         mapElement: <div style={{ height: `125%` }} />,
     }),
     lifecycle({
+        componentDidMount() {
+            navigator.geolocation.getCurrentPosition((position) => {
+                this.setState({
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                });
+                console.log(position.coords);
+            },
+                (err) => {
+                    console.log(err);
+                })
+        },
         componentWillMount() {
             const refs = {}
 
             this.setState({
                 bounds: null,
                 center: {
-                    lat: 35.681236, lng: 139.767125
+                    
                 },
                 markers: [],
                 onMapMounted: ref => {
@@ -70,14 +82,24 @@ const MapWithASearchBox = compose(
     withScriptjs,
     withGoogleMap
 )(props =>
-    <GoogleMap
-        ref={props.onMapMounted}
-        defaultZoom={14}
-        center={props.center}
-        onBoundsChanged={props.onBoundsChanged}
-        draggable={true}
-    >
-        
+    <div>
+        <GoogleMap
+            ref={props.onMapMounted}
+            defaultZoom={14}
+            center={{ lat: this.state.lat, lng: this.state.lng }}
+            onBoundsChanged={props.onBoundsChanged}
+            initialCenter={{ lat: this.state.lat, lng: this.state.lng }}
+            draggable={true}
+        >
+
+
+
+
+
+            {props.markers.map((marker, index) =>
+                <Marker key={index} position={marker.position} />
+            )}
+        </GoogleMap>
 
         <StandaloneSearchBox
             ref={props.onSearchBoxMounted}
@@ -102,12 +124,7 @@ const MapWithASearchBox = compose(
                 }}
             />
         </StandaloneSearchBox>
-        
-        
-        {props.markers.map((marker, index) =>
-            <Marker key={index} position={marker.position} />
-        )}
-    </GoogleMap>
+    </div>
 );
 
 export default MapWithASearchBox;
