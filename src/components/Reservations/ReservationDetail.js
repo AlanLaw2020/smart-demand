@@ -1,17 +1,20 @@
 import React, {Component, useState, useEffect} from 'react'
 import {Container,Row,Col} from 'react-bootstrap'
 import JourneyMap from './JourneyMap'
+import JourneyDetailTable from './JourneyDetailTable'
 
 function ReservationDetail(){
   return (
     <Container fluid>
         <Row>
+
             <Col>
-                <div>journey detail goes here</div>
+                <JourneyDetailTable/>
             </Col>
             <Col>
                 <JourneyMap/>
             </Col>
+
         </Row>
     </Container>
     )

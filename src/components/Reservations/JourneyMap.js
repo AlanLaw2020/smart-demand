@@ -4,7 +4,7 @@ import { GoogleMap, withScriptjs, withGoogleMap } from 'react-google-maps';
 function Map(){
     return(
         <GoogleMap
-            defaultZoom={10}
+            defaultZoom={15}
             defaultCenter={{lat: 45.421532, lng: -75.69189}}
         />
     )
@@ -14,7 +14,7 @@ const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 function ReservationDetail(){
   return (
-    <div style={{ width: "40vw", height: "50vh" }}>
+    <div style={{ width: "30vw", height: "37.5vh" }}>
         <WrappedMap 
             googleMapURL={'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places'}
             loadingElement={<div style={{height:'100%'}}/>}
