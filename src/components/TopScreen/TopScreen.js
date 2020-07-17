@@ -9,6 +9,21 @@ import { Link } from "react-router-dom"
 import data from './table.json'
 import Data from './newInfo.json'
 
+// //エラーメッセージ
+// state = {
+//   items:[],
+//   errorMessage:''
+// }
+// getData() {
+//   axios.get('http://xxxxxxxxxxxxx')
+//     .then(results =>{
+//       const data = result data;
+//     }
+
+//     )
+//     .catch(err => { console.log(err) })
+// }
+
 export default class Topscreen extends React.Component{
   render(){
     return(
@@ -29,9 +44,11 @@ function App() {
         <h2>直近の予約状況</h2>
         <Table data={data}/>
         <div className="mb-2">
-          <Button style={{ float: "left" }} size="lg">
-            予約確認
-          </Button>
+          <Link to="Reservations">
+            <Button style={{ float: "left" }} size="lg">
+              予約確認
+            </Button>
+          </Link>
           <Link to="MakeReservations">
             <Button style={{ float: "right" }} size="lg">
               新規予約
