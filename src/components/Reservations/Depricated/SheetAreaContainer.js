@@ -2,8 +2,7 @@ import React, {useState, useEffect} from 'react'
 import SheetAreaLayout from './SheetAreaLayout'
 import PaginationBar from './PaginationBar'
 import ReservationTable from './ReservationTable'
-import resDataMega from './resDataMega'
-import resDataMap from './resDataMap'
+import resDataMap from '../resDataMap'
 
 //SheetAreaContainer contains the ReservationTable and Pagination
 function SheetAreaContainer(){
