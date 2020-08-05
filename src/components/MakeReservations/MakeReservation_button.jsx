@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import '../../App.css';
 import MakeReservation_button_2 from "./MakeReservation_button_2";
-
+import {Link} from 'react-router-dom'
 
 
 
@@ -20,7 +20,7 @@ function MakeReservation_button() {
 
     return (
 
-        <>
+        <div>
             <Button variant="primary" onClick={handleShow} size="lg">予約</Button>
 
             <Modal
@@ -34,10 +34,11 @@ function MakeReservation_button() {
 
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose} size="lg">いいえ</Button>
-                    <Button variant="primary" onClick={handleShow}><MakeReservation_button_2 /></Button>
+                    <Link to="/Complete"><Button variant="primary" onClick={handleShow} size="lg">はい</Button></Link>
                 </Modal.Footer>
             </Modal>
-        </>
+
+        </div>
 
     );
 
