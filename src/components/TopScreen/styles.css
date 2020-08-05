@@ -7,7 +7,10 @@
   font-family: sans-serif;
   text-align: center;
 }
-
+#box{
+  border: 1px solid;
+  height: 300px;
+}
 #largeArea{
   border: 1px solid;
   height: 200px;

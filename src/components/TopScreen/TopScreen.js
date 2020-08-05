@@ -28,7 +28,7 @@ export default class Topscreen extends React.Component{
   render(){
     return(
       <div>
-        <App />
+        {/* <App /> */}
         <br />
         <br />
         <Infomation />
@@ -65,8 +65,8 @@ function App() {
 function Infomation() {
   return (
     <div className="container">
-    <h2>最新のお知らせ</h2>
-      <div id="largeArea">
+    <h2>お知らせ</h2>
+      <div class="border">
         <div className="posts">
           { Data.map(post =>{
             return(

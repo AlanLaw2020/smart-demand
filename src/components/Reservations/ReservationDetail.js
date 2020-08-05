@@ -5,16 +5,12 @@ import JourneyDetailTable from './JourneyDetailTable'
 
 function ReservationDetail(){
   return (
-    <Container fluid>
-        <Row>
-
-            <Col>
+    <Container>
+        <Row fluid style={{display:'flex', justifyContent:'center'}}>
+            {/* <Col>
                 <JourneyDetailTable/>
-            </Col>
-            <Col>
-                <JourneyMap/>
-            </Col>
-
+            </Col> */}
+            <JourneyMap style={{display:'flex', flexBasis:'100%'}}/>
         </Row>
     </Container>
     )

@@ -20,8 +20,8 @@ class ReservationTable extends Component {
               <th>乗車者</th>
               <th>電話</th>
               <th>乗車日時</th>
-              <th>乗車地点</th>
-              <th>降車地点</th>
+              <th>お迎え地</th>
+              <th>お届け地</th>
               <th>ステータス</th>
               <th>キャンセル</th>
             </tr>
