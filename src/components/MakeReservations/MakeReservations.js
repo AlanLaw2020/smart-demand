@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react'
 import '../../App.css'
-import { Button, Container, Row, Col, Card } from 'react-bootstrap';
+import { Button, Container, Row, Col, Card, Form } from 'react-bootstrap';
 import Clock from './Clock';
 import './styles.css'
 import MakeReservation_button from "./MakeReservation_button";
@@ -29,19 +29,20 @@ class MakeReservations extends Component {
                         <Card.Body>
                             <Container>
                                 <Row>
-                                    <Col xs={7}>
-                                        <br></br>
+                                    <Col md={7}>
+                                        
                                         <Card.Text>
-                                            <label for="yoyaku" class="col-sm-5 col-form-label"><h5>予約希望日・時間</h5></label>
-                                            <input type="datetime-local" class="form-control" id="nichiji" placeholder="日時" />
+                                            <label for="date" class="col-md-5 col-form-label"><h5>予約希望日</h5></label>
+                                            <input type="date" class="form-control" id="date" placeholder="希望日" />
+                                            <br></br>
+                                            <label for="pickup-time" class="col-md-5 col-form-label"><h5>予約時間</h5></label>
+                                            <input type="time" class="form-control" id="pickup-time" placeholder="希望時間" />
                                             <br></br>
 
-                                            <label for="name"><h5>乗車者</h5></label>
-                                            <input type="name" class="form-control" id="name" placeholder="お客様名" />
 
-                                            <br></br>
 
-                                            <label for="ninzu" class="col-sm-5 col-form-label"><h5>乗車人数</h5></label>
+
+                                            <label for="ninzu" class="col-md-5 col-form-label"><h5>乗車人数</h5></label>
                                             <select class="form-control" id="ninzu">
                                                 <option>1</option>
                                                 <option>2</option>
@@ -49,15 +50,25 @@ class MakeReservations extends Component {
                                                 <option>4</option>
                                                 <option>5</option></select>
                                             <br></br>
-                                            <Col xs={7}></Col>
-                                            <Col xs={7}></Col>
-                                            <label for="josha" class="col-sm-5 col-form-label"><h5>乗車地点</h5></label>
+                                            {/*}
+                                            <Form.Group controlId="exampleForm.ControlSelect1">
+                                                <Form.Label>Example select</Form.Label>
+                                                <Form.Control as="select">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </Form.Control>
+                                            </Form.Group>
+                                            */}
+                                            <label for="josha" class="col-md-5 col-form-label"><h5>乗車地点</h5></label>
                                             {/*<input type="josha" class="form-control" id="josha" placeholder="乗車地点" />*/}
                                             <PlacesWithStandaloneSearchBox />
                                             <br></br>
 
 
-                                            <label for="kosha" class="col-sm-5 col-form-label"><h5>降車地点</h5></label>
+                                            <label for="kosha" class="col-md-5 col-form-label"><h5>降車地点</h5></label>
                                             {/*<input type="kosha" class="form-control" id="kosha" placeholder="降車地点" />*/}
                                             <PlacesWithStandaloneSearchBox />
                                             <br></br>
@@ -75,7 +86,7 @@ class MakeReservations extends Component {
                                         </Card.Text></Col>
 
 
-                                    <Col xs={5}>
+                                    <Col md={5}>
                                         <MapWithADirectionsRenderer_2 />
 
                                     </Col>

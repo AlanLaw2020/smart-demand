@@ -14,7 +14,7 @@ const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 function ReservationDetail(){
   return (
-    <div style={{ width: "30vw", height: "37.5vh" }}>
+    <div style={{ width: "100%", height: "37.5vh" }}>
         <WrappedMap 
             googleMapURL={'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places'}
             loadingElement={<div style={{height:'100%'}}/>}

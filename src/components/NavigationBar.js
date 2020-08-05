@@ -49,7 +49,7 @@ class NavigationBar extends Component{
               </Nav>
               <Nav className="ml-auto">
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                <div>Welcome, 山本太郎！</div>
+                <div>ユーザー名: 山田次郎</div>
               </div>
               <Nav.Item>
                 <Nav.Link href="/Logout">

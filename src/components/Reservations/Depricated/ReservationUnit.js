@@ -15,7 +15,7 @@ class ReservationUnit extends Component {
                     <td>{this.props.reservationUnit.passengerCount}</td>
                     <td>{this.props.reservationUnit.passengerName}</td>
                     <td>{this.props.reservationUnit.contact}</td>
-                    <td>{this.props.reservationUnit.boardingTime}</td>
+                    <td>{this.props.reservationUnit.date}</td>
                     <td>{this.props.reservationUnit.boardingPlace}</td>
                     <td>{this.props.reservationUnit.destination}</td>
                     <td>{this.props.reservationUnit.reservationStatus}</td>
@@ -32,7 +32,7 @@ class ReservationUnit extends Component {
                     <td>{this.props.reservationUnit.passengerCount}</td>
                     <td>{this.props.reservationUnit.passengerName}</td>
                     <td>{this.props.reservationUnit.contact}</td>
-                    <td>{this.props.reservationUnit.boardingTime}</td>
+                    <td>{this.props.reservationUnit.date}</td>
                     <td>{this.props.reservationUnit.boardingPlace}</td>
                     <td>{this.props.reservationUnit.destination}</td>
                     <td>{this.props.reservationUnit.reservationStatus}</td>
@@ -49,7 +49,7 @@ class ReservationUnit extends Component {
                     <td>{this.props.reservationUnit.passengerCount}</td>
                     <td>{this.props.reservationUnit.passengerName}</td>
                     <td>{this.props.reservationUnit.contact}</td>
-                    <td>{this.props.reservationUnit.boardingTime}</td>
+                    <td>{this.props.reservationUnit.date}</td>
                     <td>{this.props.reservationUnit.boardingPlace}</td>
                     <td>{this.props.reservationUnit.destination}</td>
                     <td>{this.props.reservationUnit.reservationStatus}</td>
