@@ -21,7 +21,7 @@ function MakeReservation_button() {
     return (
 
         <div>
-            <Button variant="primary" onClick={handleShow} size="lg">予約</Button>
+            <Button variant="primary" type="submit" onClick={handleShow} size="lg">予約</Button>
 
             <Modal
                 show={show}
