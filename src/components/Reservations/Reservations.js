@@ -5,7 +5,7 @@ import TableNextContainer from './TableNextContainer'
 function Reservations(){
   return (
     <>
-      <h2>予約確認一覧</h2>
+      <h2>予約一覧</h2>
       <TableNextContainer/>
     </>
     )
