@@ -66,11 +66,7 @@ function Infomation() {
   return (
     <div className="container">
     <h2>お知らせ</h2>
-<<<<<<< HEAD
-      <div class="border">
-=======
       <div id="largeArea">
->>>>>>> c8b4ca4a99103344a805cb93759e31fe7782dfde
         <div className="posts">
           { Data.map(post =>{
             return(
