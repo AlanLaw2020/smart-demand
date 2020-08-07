@@ -44,7 +44,7 @@ class NavigationBar extends Component{
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link href="/Reservations">
-                    <Button>予約確認</Button>
+                    <Button>予約一覧</Button>
                   </Nav.Link>
                 </Nav.Item>
               </Nav>

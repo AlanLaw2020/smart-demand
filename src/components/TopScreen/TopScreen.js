@@ -72,3 +72,23 @@ export default class Topscreen extends React.Component{
 }
 
 
+// function Infomation() {
+//   return (
+//     <div className="container">
+//     <h2>お知らせ</h2>
+//       <div id="largeArea">
+//         <div className="posts">
+//           { Data.map(post =>{
+//             return(
+//               <div>
+//                 <p class="text-left">
+//                   { post.news }
+//                 </p>
+//               </div>
+//             )
+//           }) }
+//         </div>
+//       </div>
+//     </div>
+//     );
+//   }
