@@ -12,7 +12,7 @@ import props from "./MapWithASearchBox";
 import PlacesWithStandaloneSearchBox from './PlacesWithStandaloneSearchBox';
 import MyFancyComponent from './New-Normal-Map';
 import Geosuggest from 'react-geosuggest';
-import DisplayingErrorMessagesExample from './Validation'
+
 
 
 
