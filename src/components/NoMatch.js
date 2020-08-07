@@ -7,7 +7,7 @@ class NoMatch extends Component{
         return (
           <Container fluid>
             <Row>
-              <Col>You have come to the WRONG place!</Col>
+              <Col>このページは存在しません</Col>
             </Row>
           </Container>
         );

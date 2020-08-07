@@ -1,84 +1,94 @@
 import React from "react";
-import Table from "./table";
-import '../../App.css'
+import '../../App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from 'react-bootstrap/Button'
 
 import "./styles.css";
-import { Link } from "react-router-dom"
-import data from './table.json'
-import Data from './newInfo.json'
+// import data from './table.json'
+// import Data from './newInfo.json'
+import { Accordion, Card } from "react-bootstrap";
 
-// //エラーメッセージ
-// state = {
-//   items:[],
-//   errorMessage:''
-// }
-// getData() {
-//   axios.get('http://xxxxxxxxxxxxx')
-//     .then(results =>{
-//       const data = result data;
-//     }
-
-//     )
-//     .catch(err => { console.log(err) })
-// }
 
 export default class Topscreen extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      items: [],
+      isLoaded: false,
+    }
+  }
+    componentDidMount(){
+      fetch('https://jsondata.okiba.me/v1/json/evmWv200806083434')
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+          isLoaded: true,
+          items: json,
+        })
+      });
+    }
+  
   render(){
+    var { isLoaded, items } = this.state;
+    if (!isLoaded){
+      return <div>Loading...</div>;
+    }
+
+    else
+    {
     return(
       <div>
-        {/* <App /> */}
         <br />
         <br />
-        <Infomation />
-      </div>
-    )
-  }
-}
-
-function App() {
-  return (
-    <div className="App">
-      <div className="container">
-        <h2>直近の予約状況</h2>
-        <Table data={data}/>
-        <div className="mb-2">
-          <Link to="Reservations">
-            <Button style={{ float: "left" }} size="lg">
-              予約確認
-            </Button>
-          </Link>
-          <Link to="MakeReservations">
-            <Button style={{ float: "right" }} size="lg">
-              新規予約
-            </Button>
-          </Link>
-        </div>
-        <br />
-        <br />
-      </div>
-    </div>   
-  );
-}
-
-function Infomation() {
-  return (
-    <div className="container">
-    <h2>お知らせ</h2>
-      <div id="largeArea">
-        <div className="posts">
-          { Data.map(post =>{
+        <div className="container">
+        <h2>お知らせ</h2>
+        <div class="border">
+        <div className="items">
+        <div class="accordion" id="accordionExample">
+          { items.map(items => {
             return(
-              <div>
-                <p class="text-left">
-                  { post.news }
-                </p>
-              </div>
+              <Accordion defaultActiveKey="0">
+                <Card>
+                  <Card.Header class="text-left">
+                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                      <p>{items.publish_date} {items.subject}</p>
+                    </Accordion.Toggle>
+                </Card.Header>
+              <Accordion.Collapse eventKey="0">
+                <Card.Body class="text-left">{items.message_body}</Card.Body>
+              </Accordion.Collapse>
+                </Card>
+              </Accordion>
             )
-          }) }
+          })}
+        </div>
         </div>
       </div>
     </div>
-    );
+      </div>
+    )
+    }
   }
+}
+
+
+// function Infomation() {
+//   return (
+//     <div className="container">
+//     <h2>お知らせ</h2>
+//       <div id="largeArea">
+//         <div className="posts">
+//           { Data.map(post =>{
+//             return(
+//               <div>
+//                 <p class="text-left">
+//                   { post.news }
+//                 </p>
+//               </div>
+//             )
+//           }) }
+//         </div>
+//       </div>
+//     </div>
+//     );
+//   }

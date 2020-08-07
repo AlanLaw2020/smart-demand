@@ -16,29 +16,9 @@ function TableNextContainer(){
             text: '予約ID',
             sort: true
         }, 
-        // {
-        //     dataField: 'reservationId',
-        //     text: '予約ID',
-        //     sort: true
-        // }, 
-        // {
-        //     dataField: 'reservationTime',
-        //     text: '予約日時',
-        //     sort: true
-        // },
-        // {
-        //     dataField: 'passengerName',
-        //     text: '乗車者',
-        //     sort: true
-        // },
-        // {
-        //     dataField: 'contact',
-        //     text: '電話',
-        //     sort: true
-        // },
         {
             dataField: 'date',
-            text: '乗車日付',
+            text: '予約日付',
             sort: true
         },
         {
@@ -51,19 +31,14 @@ function TableNextContainer(){
             text: 'お迎え地',
             sort: true
         },
-        {
-            dataField: 'destination',
-            text: 'お届け地',
-            sort: true
-        },
-        {
-            dataField: 'passengerCount',
-            text: '人数',
-            sort: true
-        },
+        // {
+        //     dataField: 'destination',
+        //     text: 'お届け地',
+        //     sort: true
+        // },
         {
             dataField: 'reservationStatus',
-            text: 'ステータス',
+            text: '予約ステータス',
             sort: true,
             sortValue: (cell)=>statusOrder.filter((x)=>(x.status === cell))[0].orderNo
         },
@@ -76,7 +51,7 @@ function TableNextContainer(){
 
     const statusOrder = [{orderNo: 1, status:'OK'}, {orderNo: 2, status:'NG'}, 
         {orderNo: 3, status:'確認中'}, {orderNo: 4, status:'予約取消'},
-        {orderNo: 5, status:'乗車完了'}, {orderNo: 6, status:'未乗車'}];
+        {orderNo: 5, status:'完了'}];
 
     function cancelButton(cell, row) {
         if (row.reservationStatus === "確認中"　|| row.reservationStatus === "OK") {

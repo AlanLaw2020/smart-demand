@@ -26,7 +26,8 @@ class NavigationBar extends Component{
         <Styles>
           <Navbar expand="lg">
             <Navbar.Brand href="/">
-              <img src={homeImg} alt="HOME"></img>
+              <h3>自治体名</h3>
+              {/* <img src={homeImg} alt="HOME"></img> */}
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -43,7 +44,7 @@ class NavigationBar extends Component{
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link href="/Reservations">
-                    <Button>予約確認</Button>
+                    <Button>予約一覧</Button>
                   </Nav.Link>
                 </Nav.Item>
               </Nav>

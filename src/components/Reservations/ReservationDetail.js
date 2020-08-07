@@ -7,10 +7,10 @@ function ReservationDetail(){
   return (
     <Container>
         <Row fluid style={{display:'flex', justifyContent:'center'}}>
-            {/* <Col>
+            <Col>
                 <JourneyDetailTable/>
-            </Col> */}
-            <JourneyMap style={{display:'flex', flexBasis:'100%'}}/>
+            </Col>
+            {/* <JourneyMap style={{display:'flex', flexBasis:'100%'}}/> */}
         </Row>
     </Container>
     )

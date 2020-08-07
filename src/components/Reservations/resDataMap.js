@@ -60,7 +60,7 @@ const resDataMap=[
         boardingPlace:"高島平",
         destination:"王子",
         passengerCount:"5",
-        reservationStatus:"乗車完了"
+        reservationStatus:"完了"
     },
     {
         id:8,
@@ -69,7 +69,7 @@ const resDataMap=[
         boardingPlace:"高島平",
         destination:"蔵前",
         passengerCount:"4",
-        reservationStatus:"未乗車"
+        reservationStatus:"完了"
     },
     {
         id:9,
@@ -132,7 +132,7 @@ const resDataMap=[
         boardingPlace:"高島平",
         destination:"王子",
         passengerCount:"5",
-        reservationStatus:"乗車完了"
+        reservationStatus:"完了"
     },
     {
         id:16,
@@ -141,7 +141,7 @@ const resDataMap=[
         boardingPlace:"高島平",
         destination:"蔵前",
         passengerCount:"6",
-        reservationStatus:"未乗車"
+        reservationStatus:"完了"
     }
     
 ]
